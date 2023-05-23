@@ -1,0 +1,101 @@
+{
+    "name": "PlayerInput",
+    "maps": [
+        {
+            "name": "Player In Game",
+            "id": "8ed38f99-1616-4bbe-8fd7-08431c537aa7",
+            "actions": [
+                {
+                    "name": "Movement",
+                    "type": "Button",
+                    "id": "3a4387e9-6f1a-4cda-b0db-2f4d259ad9bb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "Left/Right",
+                    "id": "2d86f403-d64c-4a28-a54e-09c19e4fbfad",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "87eb3b0a-f397-4d4d-91f4-6f7920cb617d",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Player",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "421ae71f-255f-41ee-9cdd-9a366123c8c7",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Player",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "994e0b0d-f95a-4c18-8d9c-3fd780407fc6",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Player Menu",
+            "id": "75630148-a64b-44bd-a87e-b04ec6c02f5c",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "5b86d4db-5c47-4753-8f28-65ef470e78b3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "b912396e-8c49-483a-810e-2280dd8fc1c2",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Player",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Player",
+            "bindingGroup": "Player",
+            "devices": []
+        }
+    ]
+}
