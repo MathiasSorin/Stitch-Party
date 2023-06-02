@@ -7,8 +7,17 @@
             "actions": [
                 {
                     "name": "Movement",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "3a4387e9-6f1a-4cda-b0db-2f4d259ad9bb",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "95835896-aa80-482e-a41f-d5d2a38e057b",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -17,8 +26,8 @@
             ],
             "bindings": [
                 {
-                    "name": "Left/Right",
-                    "id": "2d86f403-d64c-4a28-a54e-09c19e4fbfad",
+                    "name": "1D Axis",
+                    "id": "fc771dba-cec5-430c-95d9-70bd5585920b",
                     "path": "1DAxis",
                     "interactions": "",
                     "processors": "",
@@ -28,63 +37,35 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "negative",
-                    "id": "87eb3b0a-f397-4d4d-91f4-6f7920cb617d",
+                    "name": "Negative",
+                    "id": "f618097d-88e9-4ca5-914f-7aa55afddc08",
                     "path": "<Keyboard>/a",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Player",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "421ae71f-255f-41ee-9cdd-9a366123c8c7",
-                    "path": "<Keyboard>/d",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Player",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "",
-                    "id": "994e0b0d-f95a-4c18-8d9c-3fd780407fc6",
-                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Movement",
                     "isComposite": false,
-                    "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "Player Menu",
-            "id": "75630148-a64b-44bd-a87e-b04ec6c02f5c",
-            "actions": [
+                    "isPartOfComposite": true
+                },
                 {
-                    "name": "New action",
-                    "type": "Button",
-                    "id": "5b86d4db-5c47-4753-8f28-65ef470e78b3",
-                    "expectedControlType": "Button",
-                    "processors": "",
+                    "name": "Positive",
+                    "id": "c0f289bf-2353-4605-b428-f958a5b5aa22",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
                 {
                     "name": "",
-                    "id": "b912396e-8c49-483a-810e-2280dd8fc1c2",
-                    "path": "",
+                    "id": "30cf6aee-a74b-4a36-9623-acf302818ff9",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Player",
-                    "action": "New action",
+                    "groups": "",
+                    "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
