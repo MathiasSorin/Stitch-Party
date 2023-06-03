@@ -2,14 +2,14 @@
     "name": "PlayerInput",
     "maps": [
         {
-            "name": "Player In Game",
+            "name": "Player Control",
             "id": "8ed38f99-1616-4bbe-8fd7-08431c537aa7",
             "actions": [
                 {
                     "name": "Movement",
                     "type": "PassThrough",
                     "id": "3a4387e9-6f1a-4cda-b0db-2f4d259ad9bb",
-                    "expectedControlType": "Axis",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -26,9 +26,9 @@
             ],
             "bindings": [
                 {
-                    "name": "1D Axis",
+                    "name": "2D Vector",
                     "id": "fc771dba-cec5-430c-95d9-70bd5585920b",
-                    "path": "1DAxis",
+                    "path": "2DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -37,23 +37,45 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "Negative",
+                    "name": "Up",
                     "id": "f618097d-88e9-4ca5-914f-7aa55afddc08",
-                    "path": "<Keyboard>/a",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Player",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "Positive",
+                    "name": "Down",
                     "id": "c0f289bf-2353-4605-b428-f958a5b5aa22",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Player",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Left",
+                    "id": "bcd1cf2a-d359-4f8b-a114-1abd77bd9f15",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Player",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Right",
+                    "id": "5e6bae08-cdb4-4ea1-91c9-ab0f23d079dc",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Player",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -64,7 +86,7 @@
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Player",
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -76,7 +98,13 @@
         {
             "name": "Player",
             "bindingGroup": "Player",
-            "devices": []
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
         }
     ]
 }

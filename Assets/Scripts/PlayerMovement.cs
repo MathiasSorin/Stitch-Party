@@ -9,17 +9,17 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement Variables")]
     public float movementSpeed = 5f;
 
-    private float movementInput;
+    private Vector2 movementInput;
 
     //Called on player input
     public void OnMovement(InputAction.CallbackContext value)
     {
-        movementInput = value.ReadValue<float>();
+        movementInput = value.ReadValue<Vector2>();
     }
 
     private void FixedUpdate()
     {
         //Move character here
-        rb.velocity = new Vector2(movementInput*movementSpeed, rb.velocity.y);
+        rb.velocity = new Vector2(movementInput.x*movementSpeed, rb.velocity.y);
     }
 }
