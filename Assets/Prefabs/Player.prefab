@@ -120,7 +120,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3418949894138660803}
         m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: OnMovement
+        m_MethodName: OnMovementInput
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 6086136075380341338}
+  pi: {fileID: 2089507331634827397}
   movementSpeed: 5
 --- !u!61 &1141212332049503730
 BoxCollider2D:
@@ -240,7 +241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GlobalObjectIdHash: 951099334
-  AlwaysReplicateAsRoot: 0
+  AlwaysReplicateAsRoot: 1
   SynchronizeTransform: 1
   ActiveSceneSynchronization: 0
   SceneMigrationSynchronization: 1

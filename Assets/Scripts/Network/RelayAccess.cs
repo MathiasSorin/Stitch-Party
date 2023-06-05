@@ -3,6 +3,9 @@ using Unity.Services.Core;
 using Unity.Services.Authentication;
 using Unity.Services.Relay;
 using Unity.Services.Relay.Models;
+using Unity.Netcode;
+using Unity.Netcode.Transports.UTP;
+using Unity.Networking.Transport.Relay;
 
 public class RelayAccess : MonoBehaviour
 {
@@ -12,7 +15,14 @@ public class RelayAccess : MonoBehaviour
     {
         Debug.developerConsoleVisible = true;
         await UnityServices.InitializeAsync();
-        await AuthenticationService.Instance.SignInAnonymouslyAsync();
+        try
+        {
+            await AuthenticationService.Instance.SignInAnonymouslyAsync();
+        }
+        catch (AuthenticationException e)
+        {
+            Debug.Log(e);
+        }
     }
 
     public async void CreateRelay()
@@ -21,7 +31,14 @@ public class RelayAccess : MonoBehaviour
         {
             Allocation relayAllocation = await RelayService.Instance.CreateAllocationAsync(maxPlayer);
             string relayJoinCode = await RelayService.Instance.GetJoinCodeAsync(relayAllocation.AllocationId);
-            Debug.Log(relayJoinCode);
+
+            Debug.Log("RELAY JOIN CODE IS: "+ relayJoinCode);
+            GetComponent<NetworkManagerUI>().UpdateRelayCode(relayJoinCode);
+
+            RelayServerData relayServerData = new RelayServerData(relayAllocation, "dtls");
+            NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
+
+            NetworkManager.Singleton.StartHost();
         }
         catch (RelayServiceException e)
         {
@@ -33,7 +50,12 @@ public class RelayAccess : MonoBehaviour
     {
         try
         {
-            await RelayService.Instance.JoinAllocationAsync(relayJoinCode);
+            JoinAllocation joinAllocation = await RelayService.Instance.JoinAllocationAsync(relayJoinCode);
+
+            RelayServerData relayServerData = new RelayServerData(joinAllocation, "dtls");
+            NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
+
+            NetworkManager.Singleton.StartClient();
         }
         catch (RelayServiceException e)
         {
